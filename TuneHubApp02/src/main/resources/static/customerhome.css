@@ -1,0 +1,80 @@
+/* styles.css */
+header {
+  background-color: #333;
+}
+
+body {
+	background-color: lightgray;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.music-logo{
+	color: white;
+	margin-left: 40px;
+	font-weight: bold;
+	font-size: 40px;
+	font-family: cursive;
+}
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.welcome-div{
+	text-align: center;
+}
+.welcome-logo{
+	width: 300px;
+}
+.welcome-h1{
+	font-size: 75px;
+	color: maroon;
+}
+.welcome-h3{
+	font-size: 50px;
+}
+/* Styling for the container */
+    .container {
+        width: 100%;
+        height: 50px; /* Adjust height as needed */
+        overflow: hidden;
+        position: relative;
+        background-color: #f0f0f0;
+    }
+
+    /* Styling for the text */
+    .text {
+        position: absolute;
+        white-space: nowrap;
+        font-size: 20px; /* Adjust font size as needed */
+        font-weight: bold;
+        color: red;
+        animation: scrollText 20s linear infinite; /* Adjust animation duration as needed */
+    }
+
+    /* Keyframe animation for scrolling */
+    @keyframes scrollText {
+        0% { left: 100%; }
+        100% { left: -100%; }
+    }

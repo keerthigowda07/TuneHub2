@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org"> 
+
+<head> 
+	<title>Create playlist-Admin</title> 
+	<link rel="stylesheet" href="create_playlist_admin.css">
+</head> 
+
+<body style="background: lightgrey"> 
+	<div>
+<header>
+  <nav>
+    <div class="logo">
+      <h1 class="music-logo">Tune Hub</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/map-adminhome">Home</a></li>
+      <li><a href="/map-addsongs-page">Add Songs</a></li>
+      <li><a href="/map-viewsongs-admin">View Songs</a></li>
+      <li><a href="map-create-playlist-admin">Create Playlist</a></li>
+      <li><a href="/map-view-playlist-admin">View Playlist</a></li>
+      <li><a href="#">Log out</a></li>
+      
+    </ul>
+  </nav>
+</header>
+</div>
+	<div class="body">
+	<div class="main"> 
+		<div class="title">
+            Create New Playlist
+         </div>
+		<form action="/savePlaylist" method="post"> 
+			<div>
+			<label for="playlistName">Playlist Name: </label>
+			<input type="text" name="playlistName" id="playlistName" placeholder="Enter Playlist Name" required="required">
+		</div>
+		<div >
+			<table>
+				<thead>
+					<tr>
+						<th>Select/Unselect</th>
+						<th>Song Name</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="allsongslist:${allsongslist}">
+						<td><input type="checkbox" th:name="songs" th:value="${allsongslist.id}"></td>
+						<td th:text="${allsongslist.name}"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+			<input type="submit" value="Create Playlist" class="wrap">
+            
+		</form> 
+	</div> 
+	</div>
+</body> 
+</html>

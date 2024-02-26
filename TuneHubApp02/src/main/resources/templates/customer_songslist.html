@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Songs List-Tune Hub</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h1>Songs List</h1>
+
+<table>
+<thead>
+  <tr>
+    <th>Songs Name</th>
+    <th>Songs Artist</th>
+    <th>Songs Genre</th>
+    <th>Songs Link</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr th:each ="allsongslist : ${allsongslist}">
+    <td th:text="${allsongslist.name}"></td>
+    <td th:text="${allsongslist.artist}"></td>
+    <td th:text="${allsongslist.genre}"></td>
+    <td>
+    	<audio controls="controls">
+    		<source th:src="${allsongslist.link}" type="audio/mpeg">
+    	</audio>
+    </td>
+  </tr>
+ </tbody>
+</table>
+
+</body>
+</html>
+

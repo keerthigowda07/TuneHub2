@@ -1,0 +1,68 @@
+/* styles.css */
+header {
+  background-color: #333;
+}
+
+body {
+	background-color: lightgray;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.music-logo{
+	color: white;
+	margin-left: 40px;
+	font-weight: bold;
+	font-size: 40px;
+	font-family: cursive;
+}
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.logo img {
+  max-width: 100px;
+}
+
+.welcome-div{
+	text-align: center;
+}
+.welcome-logo{
+	width: 300px;
+}
+.welcome-h1{
+	font-size: 50px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 3px solid darkgray;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: darkgray;
+   border: 3px solid lightgray;
+}

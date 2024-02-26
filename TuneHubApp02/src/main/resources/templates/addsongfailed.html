@@ -1,0 +1,205 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Add Songs Failed</title> 
+	<style type="text/css">
+		/* style.css */
+		.body { 
+			display: flex; 
+			align-items: center; 
+			justify-content: center; 
+			margin-top: 50px;
+		} 
+		
+		.main { 
+			background-color: #fff; 
+			border-radius: 15px; 
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+			padding: 10px 20px; 
+			transition: transform 0.2s; 
+			width: 500px; 
+			text-align: center; 
+		} 
+		
+		.title{
+		  font-size: 35px;
+		  font-weight: 600;
+		  text-align: center;
+		  line-height: 100px;
+		  color: #fff;
+		  user-select: none;
+		  border-radius: 15px 15px 0 0;
+		  background: linear-gradient(-135deg, black, gray);
+		}
+		
+		label { 
+			display: block; 
+			width: 100%; 
+			margin-top: 10px; 
+			margin-bottom: 5px; 
+			text-align: left; 
+			color: #555; 
+			font-weight: bold; 
+			user-select: none;
+		} 
+		
+		#pass { 
+			color: red; 
+			font-size: 12px; 
+		} 
+		
+		input { 
+			display: block; 
+			width: 100%; 
+			margin-bottom: 15px; 
+			padding: 10px; 
+			box-sizing: border-box; 
+			border: 1px solid #ddd; 
+			border-radius: 5px; 
+			user-select: none;
+		} 
+		
+		select { 
+			display: block; 
+			width: 100%; 
+			margin-bottom: 15px; 
+			padding: 10px; 
+			box-sizing: border-box; 
+			border: 1px solid #ddd; 
+			border-radius: 5px; 
+		} 
+		
+		button { 
+			padding: 15px; 
+			border-radius: 10px; 
+			margin-top: 15px; 
+			margin-bottom: 15px; 
+			border: none; 
+			color: white; 
+			cursor: pointer; 
+			background-color: #4CAF50; 
+			width: 100%; 
+			font-size: 16px; 
+		} 
+		
+		.wrap { 
+			display: flex; 
+			justify-content: center; 
+			align-items: center;
+			background: linear-gradient(-135deg, black, gray);
+			color: #fff;
+			font-weight: bold;
+			font-size: 20px;
+			font-style: italic;
+		}
+		textarea {
+			display: block; 
+			width: 100%; 
+			margin-bottom: 15px; 
+			padding: 10px; 
+			box-sizing: border-box; 
+			border: 1px solid #ddd; 
+			border-radius: 5px; 
+ 		}
+ 		
+ 		header {
+		  background-color: #333;
+		}
+		
+		nav {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		}
+		
+		.music-logo{
+			color: white;
+			margin-left: 40px;
+			font-weight: bold;
+			font-size: 40px;
+			font-family: cursive;
+		}
+		.nav-links {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  display: flex;
+		}
+		
+		.nav-links li {
+		  margin-right: 30px;
+		}
+		
+		.nav-links li a {
+		  color: white;
+		  text-decoration: none;
+		  font-size: 20px;
+		}
+		
+		.logo img {
+		  max-width: 100px;
+		}
+		
+		.welcome-div{
+			text-align: center;
+		}
+	</style>
+</head> 
+
+<body style="background: lightgrey"> 
+	<div>
+<header>
+  <nav>
+    <div class="logo">
+      <h1 class="music-logo">Tune Hub</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/map-adminhome">Home</a></li>
+      <li><a href="/map-addsongs-page">Add Songs</a></li>
+      <li><a href="/map-viewsongs-admin">View Songs</a></li>
+      <li><a href="map-create-playlist-admin">Create Playlist</a></li>
+      <li><a href="/map-view-playlist-admin">View Playlist</a></li>
+      <li><a href="#">Log out</a></li>
+      
+    </ul>
+  </nav>
+</header>
+</div>
+	<div class="body">
+	<div class="main"> 
+		<div class="title">
+            Add New Songs
+         </div>
+         <div>
+			<h3 style="color: red; user-select: none;">
+			Sorry! Add song Failed, Song name is already existed.</h3>
+		</div>
+		<form action="/addsongs" method="post"> 
+			<label for="name">Song Name:</label> 
+			<input type="text" id="name"
+				name="name"
+				placeholder="Enter Song Name" required> 
+
+			<label for="artist">Song Artist:</label> 
+			<input type="text" id="artist"
+				name="artist"
+				placeholder="Enter Song Artist" required> 
+				
+			<label for="genre">Song Genre:</label> 
+			<input type="text" id="genre"
+				name="genre"
+				placeholder="Enter Song Genre" required> 
+			
+			<label for="link">Song Link:</label> 
+			<input type="text" id="link"
+				name="link"
+				placeholder="Enter Song Link" required> 
+			
+			<input type="submit" value="Add Song" class="wrap">
+            
+		</form> 
+	</div> 
+	</div>
+</body> 
+</html>

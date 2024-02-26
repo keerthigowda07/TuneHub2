@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playlist-Tune Hub</title>
+<link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+<div>
+<header>
+  <nav>
+    <div class="logo">
+      <h1 class="music-logo">Tune Hub</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/map-adminhome">Home</a></li>
+      <li><a href="/map-addsongs-page">Add Songs</a></li>
+      <li><a href="/map-viewsongs-admin">View Songs</a></li>
+      <li><a href="map-create-playlist-admin">Create Playlist</a></li>
+      <li><a href="/map-view-playlist-admin">View Playlist</a></li>
+      <li><a href="#">Log out</a></li>
+      
+    </ul>
+  </nav>
+</header>
+</div>
+<div>
+	<div class="welcome-div">
+		<h3 class="welcome-h1"> 
+			<u>Personalized Playlists</u>
+		</h3>
+		<table>
+			<thead>
+			  <tr>
+			    <th>Playlist Id</th>
+			    <th>Playlist Name</th>
+			    <th>Songs</th>
+			  </tr>
+			 </thead>
+			 <tbody>
+			  <tr th:each ="playlist : ${playlist}">
+			    <td th:text="${playlist.id}"></td>
+			    <td th:text="${playlist.playlistName}"></td>
+			    <td style="width: 50%;">
+			    	<ul th:each ="songs : ${playlist.songs}">
+			    		<li>
+			    			<label th:text="${songs.name}"></label>
+			    			<audio controls="controls" style="width: 100%;">
+					    		<source th:src="${songs.link}" type="audio/mpeg">
+					    	</audio>
+			    		</li>
+			    	</ul>
+			    	
+			    </td>
+			  </tr>
+			 </tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

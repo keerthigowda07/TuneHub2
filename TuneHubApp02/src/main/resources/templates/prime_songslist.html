@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Home-Tune Hub</title>
+<link rel="stylesheet" href="songslist.css">
+</head>
+<body>
+<div>
+<header>
+  <nav>
+    <div class="logo">
+      <h1 class="music-logo">Tune Hub</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/map-prime-member-home">Home</a></li>
+      <li><a href="/map-viewsongs-prime">View Songs</a></li>
+      <li><a href="/map-view-playlist-prime">View Playlist</a></li>
+      <li><a href="#">Log out</a></li>
+      
+    </ul>
+  </nav>
+</header>
+</div>
+<div>
+	<div class="welcome-div">
+		<h3 class="welcome-h1"><u>Songs List</u> </h3>
+		<table>
+			<thead>
+			  <tr>
+			    <th>Songs Name</th>
+			    <th>Songs Artist</th>
+			    <th>Songs Genre</th>
+			    <th>Songs Link</th>
+			  </tr>
+			 </thead>
+			 <tbody>
+			  <tr th:each ="allsongslist : ${allsongslist}">
+			    <td th:text="${allsongslist.name}"></td>
+			    <td th:text="${allsongslist.artist}"></td>
+			    <td th:text="${allsongslist.genre}"></td>
+			    <td>
+			    	<audio controls="controls" style="width: 100%;">
+			    		<source th:src="${allsongslist.link}" type="audio/mpeg">
+			    	</audio>
+			    </td>
+			  </tr>
+			 </tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>
